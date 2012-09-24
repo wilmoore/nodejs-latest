@@ -7,8 +7,6 @@ This utility is a very simple wrapper of a pattern I use to install multiple Nod
 Usage Examples
 ------------------------------
 
-**Default**
-
     % nodejs-install
 
 
@@ -27,13 +25,12 @@ Installing
     % cd !$
     % curl -# -L https://github.com/wilmoore/nodejs-install/tarball/master | tar -xz --strip 1
     % chmod a+x bin/*
+    % export PATH=${HOME}/local/nodejs-install/bin:${PATH}
+    % cd -
 
 **Path Setup**
 
-Best if used with [node-version](http://github.com/wilmoore/node-version); however, you may alternatively export the following environment variables:
-
-    export PATH=${NODE_ROOT}/bin:${PATH}
-    export MANPATH=${NODE_ROOT}/share/man:${MANPATH}
+Best if used with [node-version](http://github.com/wilmoore/node-version); however, you may alternatively export the ${PATH} and ${MANPATH} environment variables manually.
 
 
 Changelog
