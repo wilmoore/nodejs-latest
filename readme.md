@@ -4,7 +4,7 @@ nodejs-install: nodejs installer for *nix-like systems
 This utility is a very simple wrapper of a pattern I use to install multiple NodeJS versions without conflict. Best if used with [node-version](http://github.com/wilmoore/node-version).
 
 
-Usage Examples
+Usage Example
 ------------------------------
 
     % nodejs-install
