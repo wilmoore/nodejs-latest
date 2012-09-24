@@ -15,7 +15,7 @@ Usage Examples
 Requirements
 ------------------------------
 
-*   [required] (Linux or Mac OS X) + grep, cut, curl
+*   [required] (Linux or Mac OS X) + awk, curl, uname
 
 
 Installing

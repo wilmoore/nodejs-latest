@@ -31,15 +31,58 @@ declare EXE_PATH=$(dirname $0)
 # target directory
 declare TARGETDIR=nodejs
 
+# force install
+declare FORCE_INSTALL=0
+
 ################################################################################
 # overridable
 ################################################################################
 
-# dry run?
-declare ISDRYRUN=${DRYRUN-}
-
 # directory prefix
 declare PREFIX=${DRYRUN-${HOME}/local/${TARGETDIR}}
+
+################################################################################
+# command-line options
+################################################################################
+
+while getopts "f" option; do
+  if [ ${option} = 'f' ]; then
+    FORCE_INSTALL=1
+  fi
+done
+
+################################################################################
+# check for awk
+################################################################################
+
+declare AWK_BIN=$(which awk)
+
+if [ -z "$AWK_BIN" ]; then
+    echo "Unfortunately, we can't continue until the awk binary can be found in your path..."
+    exit 1
+fi
+
+################################################################################
+# check for curl
+################################################################################
+
+declare CURL_BIN=$(which curl)
+
+if [ -z "$CURL_BIN" ]; then
+    echo "Unfortunately, we can't continue until the curl binary can be found in your path..."
+    exit 1
+fi
+
+################################################################################
+# check for uname
+################################################################################
+
+declare UNAME_BIN=$(which uname)
+
+if [ -z "$UNAME_BIN" ]; then
+    echo "Unfortunately, we can't continue until the uname binary can be found in your path..."
+    exit 1
+fi
 
 ################################################################################
 # build target directories
@@ -59,7 +102,7 @@ fi
 # TARGET_OS
 ################################################################################
 
-if [ `uname` = 'Darwin' ]; then
+if [ $(${UNAME_BIN}) = 'Darwin' ]; then
   declare TARGET_OS=darwin
 else
   declare TARGET_OS=linux
@@ -115,15 +158,33 @@ declare TARGET_PATH=${PREFIX}/${LATEST_VERSION}
 echo "TARGET PATH: ${TARGET_PATH}"
 
 ################################################################################
-# download and install
+# check if installation exists
 ################################################################################
 
-if [[ -d ${TARGET_PATH} ]]; then
+if [[ -d ${TARGET_PATH} && ${FORCE_INSTALL} -eq 0 ]]; then
   echo ""
   echo "Sorry, but version '${LATEST_VERSION}' has already been installed to '${PREFIX}'." >&2
+  echo "Use '${PROGNAME} -f' to force install." >&2
   exit 1
 fi
 
+################################################################################
+# download and install
+################################################################################
+
+rm -rf ${TARGET_PATH}
 mkdir -p ${TARGET_PATH}
 curl -L -# ${BIN_URL} | tar xz --strip 1 -C ${TARGET_PATH}
+
+################################################################################
+# report success/fail
+################################################################################
+
+echo ""
+
+if [[ $? -eq 0 && -f ${TARGET_PATH}/bin/node ]]; then
+  echo "install complete"
+else
+  echo "install failed"
+fi
 
