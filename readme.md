@@ -30,7 +30,7 @@ Installing
 
 **Path Setup**
 
-Best if used with [node-version](http://github.com/wilmoore/node-version); however, you may alternatively export the ${PATH} and ${MANPATH} environment variables manually.
+Best if used with [nodejs-version](http://github.com/wilmoore/nodejs-version); however, you may alternatively export the ${PATH} and ${MANPATH} environment variables manually.
 
 
 Changelog
