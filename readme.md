@@ -1,7 +1,7 @@
 nodejs-latest: NodeJS binary installer for *nix systems
 ========================================================
 
-I'm lazy so when a new version of NodeJS comes out, I just install the latest binary with `nodejs-latest`. Yes, that is all this thing does. I tend to combine it with [nodejs-version](http://github.com/wilmoore/nodejs-version).
+I'm lazy so when a new version of NodeJS comes out, I just install the latest binary with `nodejs-latest`. Yes, that is all this thing does.
 
 
 How is this helpful
