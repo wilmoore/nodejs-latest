@@ -20,7 +20,7 @@ set -o nounset
 ################################################################################
 
 # current version
-declare _VERSION=0.0.1
+declare _VERSION=0.0.2
 
 # program name
 declare PROGNAME=nodejs-install
@@ -39,7 +39,7 @@ declare FORCE_INSTALL=0
 ################################################################################
 
 # directory prefix
-declare PREFIX=${DRYRUN-${HOME}/local/${TARGETDIR}}
+declare PREFIX=${PREFIX-${HOME}/local/${TARGETDIR}}
 
 ################################################################################
 # command-line options
