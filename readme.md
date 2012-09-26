@@ -1,8 +1,19 @@
 nodejs-latest: NodeJS binary installer for *nix systems
 ========================================================
 
-*nodejs-latest* is a simple NodeJS latest binary installer. Best if used with [nodejs-version](http://github.com/wilmoore/nodejs-version).
+I'm lazy so when a new version of NodeJS comes out, I just install the latest binary with `nodejs-latest`. Yes, that is all this thing does. I tend to combine it with [nodejs-version](http://github.com/wilmoore/nodejs-version).
 
+
+How is this helpful
+------------------------------
+
+I'm lazy and I got tired of:
+
+-   Looking up the NodeJS ftp site.
+-   Locating the correct binary (Mac or Linux, x64 or x86)
+-   Downloading
+-   Extracting
+-   Updating my $PATH environment variable to point to the right place (see [nodejs-version](http://github.com/wilmoore/nodejs-version) for that)
 
 Usage Example
 ------------------------------
@@ -36,6 +47,7 @@ Best if used with [nodejs-version](http://github.com/wilmoore/nodejs-version); h
 Changelog
 ------------------------------
 
+-   (0.0.3) 20120926: Renamed to `nodejs-latest`.
 -   (0.0.1) 20120923: Initial Usable Release.
 
 
