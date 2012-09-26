@@ -1,13 +1,13 @@
-nodejs-install: nodejs installer for *nix-like systems
+nodejs-latest: NodeJS binary installer for *nix systems
 ========================================================
 
-This utility is a very simple wrapper of a pattern I use to install multiple NodeJS versions without conflict. Best if used with [node-version](http://github.com/wilmoore/node-version).
+*nodejs-latest* is a simple NodeJS latest binary installer. Best if used with [nodejs-version](http://github.com/wilmoore/nodejs-version).
 
 
 Usage Example
 ------------------------------
 
-    % nodejs-install
+    % nodejs-latest
 
 
 Requirements
@@ -21,11 +21,11 @@ Installing
 
 **Download**
 
-    % mkdir -p $HOME/local/nodejs-install
+    % mkdir -p $HOME/local/nodejs-latest
     % cd !$
-    % curl -# -L https://github.com/wilmoore/nodejs-install/tarball/master | tar -xz --strip 1
+    % curl -# -L https://github.com/wilmoore/nodejs-latest/tarball/master | tar -xz --strip 1
     % chmod a+x bin/*
-    % export PATH=${HOME}/local/nodejs-install/bin:${PATH}
+    % export PATH=${HOME}/local/nodejs-latest/bin:${PATH}
     % cd -
 
 **Path Setup**
