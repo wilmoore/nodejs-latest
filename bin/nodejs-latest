@@ -20,7 +20,7 @@ set -o nounset
 ################################################################################
 
 # current version
-declare _VERSION=0.0.3
+declare _VERSION=0.0.4
 
 # program name
 declare PROGNAME=nodejs-latest
@@ -34,6 +34,9 @@ declare TARGETDIR=nodejs
 # force install
 declare FORCE_INSTALL=0
 
+# install
+declare INSTALL=0
+
 ################################################################################
 # overridable
 ################################################################################
@@ -45,10 +48,21 @@ declare PREFIX=${PREFIX-${HOME}/local/${TARGETDIR}}
 # command-line options
 ################################################################################
 
-while getopts "f" option; do
+while getopts "fiv" option; do
+
   if [ ${option} = 'f' ]; then
     FORCE_INSTALL=1
   fi
+
+  if [ ${option} = 'i' ]; then
+    INSTALL=1
+  fi
+
+  if [ ${option} = 'v' ]; then
+    echo "${PROGNAME} ${_VERSION}"
+    exit 0
+  fi
+
 done
 
 ################################################################################
@@ -156,6 +170,15 @@ echo "BINARY URL: ${BIN_URL}"
 
 declare TARGET_PATH=${PREFIX}/${LATEST_VERSION}
 echo "TARGET PATH: ${TARGET_PATH}"
+
+################################################################################
+# INSTALL?
+################################################################################
+
+# by default, we report only
+if [[ ${INSTALL} -eq 0 ]]; then
+  exit 0
+fi
 
 ################################################################################
 # check if installation exists

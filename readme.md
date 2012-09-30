@@ -18,6 +18,20 @@ I'm lazy and I got tired of:
 Usage Example
 ------------------------------
 
+Show latest NodeJS version available:
+
+    % nodejs-latest
+
+Install latest NodeJS version:
+
+    % nodejs-latest -i
+
+Install latest NodeJS version (forcefully overwrites a previous installation of this version):
+
+    % nodejs-latest -fi
+
+Show `nodejs-latest` version info:
+
     % nodejs-latest
 
 
