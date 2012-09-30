@@ -1,7 +1,7 @@
 Behold the latest binary version of NodeJS
 ========================================================
 
-Find out the latest available version of NodeJS or install the binary. I quickly got tired of typing in the URL, locating the latest directly, downloading the tarball, extracting, and updating ${PATH}. Now, when a new version of NodeJS comes out (check with `nodejs-latest`), I install with `nodejs-latest -i`.
+Find out the latest available version of NodeJS or install the binary. I quickly got tired of typing in the URL, locating the latest directory, downloading the tarball, extracting, and updating ${PATH}. Now, when a new version of NodeJS comes out (check with `nodejs-latest`), I install with `nodejs-latest -i`.
 
 
 How is this helpful
