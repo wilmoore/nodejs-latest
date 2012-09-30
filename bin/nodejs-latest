@@ -20,7 +20,7 @@ set -o nounset
 ################################################################################
 
 # current version
-declare _VERSION=0.0.4
+declare _VERSION=0.0.5
 
 # program name
 declare PROGNAME=nodejs-latest
@@ -48,10 +48,24 @@ declare PREFIX=${PREFIX-${HOME}/local/${TARGETDIR}}
 # command-line options
 ################################################################################
 
-while getopts "fiv" option; do
+while getopts "fhiv" option; do
 
   if [ ${option} = 'f' ]; then
     FORCE_INSTALL=1
+  fi
+
+  if [ ${option} = 'h' ]; then
+    echo "${PROGNAME} ${_VERSION}"
+    echo ""
+    echo "${PROGNAME} [-i|-f|-h|-v]"
+    echo ""
+    echo "        Show latest NodeJS version available"
+    echo " -i     Install latest NodeJS binary"
+    echo " -f     Install (forcefully) latest NodeJS binary (no effect without -i)"
+    echo " -h     Help"
+    echo " -v     Program version info"
+    echo ""
+    exit 0
   fi
 
   if [ ${option} = 'i' ]; then

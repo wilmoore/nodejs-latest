@@ -24,17 +24,21 @@ Show latest NodeJS version available:
 
     % nodejs-latest
 
-Install latest NodeJS version:
+Install latest NodeJS binary:
 
     % nodejs-latest -i
 
-Install latest NodeJS version (forcefully overwrites a previous installation of this version):
+Install latest NodeJS binary (forcefully overwriting a previous installation):
 
     % nodejs-latest -fi
 
-Show `nodejs-latest` version info:
+Show program version:
 
-    % nodejs-latest
+    % nodejs-latest -v
+
+Help:
+
+    % nodejs-latest -h
 
 
 Requirements
