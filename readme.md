@@ -1,5 +1,5 @@
-Behold the latest binary version of NodeJS
-========================================================
+Report and/or install the latest binary version of NodeJS
+=========================================================
 
 Find out the latest available version of NodeJS or install the binary. I quickly got tired of typing in the URL, locating the latest directory, downloading the tarball, extracting, and updating `${PATH}`.
 
