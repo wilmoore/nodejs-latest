@@ -2,8 +2,8 @@
 
 ################################################################################
 # name: nodejs-latest
-# what: installs the latest NodeJS binary into # $HOME/local/nodejs/{VERSION}
-# why : because life is short and installing a binary should be trivial
+# what: discover / Install the latest binary release of NodeJS.
+# why : installing the binary version of NodeJS is simple; yet, a tedius chore.
 ################################################################################
 
 ################################################################################
@@ -20,7 +20,7 @@ set -o nounset
 ################################################################################
 
 # current version
-declare _VERSION=0.0.5
+declare _VERSION=0.0.6
 
 # program name
 declare PROGNAME=nodejs-latest
@@ -116,13 +116,24 @@ fi
 # build target directories
 ################################################################################
 
-echo "creating directory: ${PREFIX}"
+# a bit of whitespace
 echo ""
-mkdir -p ${PREFIX}
+echo "Scanning for the latest NodeJS binary relase:"
+echo ""
 
-# quit if directory doesn't exist
+# install if requested
+if [[ ${INSTALL} -eq 1 ]]; then
+  echo "Installing to: ${PREFIX}"
+  echo ""
+  echo "creating directory: ${PREFIX}"
+  echo ""
+  mkdir -p ${PREFIX}
+fi
+
+# quit if $PREFIX directory doesn't exist
 if [[ ! -d ${PREFIX} ]]; then
-  echo "Sorry, but there was a problem creating directory '${PREFIX}'." >&2
+  echo "Sorry, the directory '${PREFIX}' does not exist and we were unable to create it." >&2
+  echo "We are done here."                                                                >&2
   exit 1
 fi
 
@@ -200,8 +211,8 @@ fi
 
 if [[ -d ${TARGET_PATH} && ${FORCE_INSTALL} -eq 0 ]]; then
   echo ""
-  echo "Sorry, but version '${LATEST_VERSION}' has already been installed to '${PREFIX}'." >&2
-  echo "Use '${PROGNAME} -f' to force install." >&2
+  echo "Sorry, but version '${LATEST_VERSION}' currently exists at '${PREFIX}'." >&2
+  echo "Use '${PROGNAME} -if' to force install."                                 >&2
   exit 1
 fi
 
@@ -225,3 +236,4 @@ else
   echo "install failed"
 fi
 
+echo ""

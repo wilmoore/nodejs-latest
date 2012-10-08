@@ -1,36 +1,36 @@
-Report and/or install the latest binary version of NodeJS
-=========================================================
+Discover / Install the latest binary release of NodeJS
+========================================================
 
-Find out the latest available version of NodeJS or install the binary. I quickly got tired of typing in the URL, locating the latest directory, downloading the tarball, extracting, and updating `${PATH}`.
-
-Now, when a new version of NodeJS comes out (check with `nodejs-latest`), I install with `nodejs-latest -i`.
+Installing the binary version of NodeJS is simple; however, it quickly becomes a tedius chore. `nodejs-latest`, displays the latest available binary release and `nodejs-latest -i` will download and extract it.
 
 
-How is this helpful
+How is this helpful?
 ------------------------------
 
-I'm lazy and I got tired of:
+It can become tedious to continually:
 
--   Looking up the NodeJS ftp site.
--   Locating the correct binary (Mac or Linux, x64 or x86)
--   Downloading
--   Extracting
--   Updating my $PATH environment variable to point to the right place (see [nodejs-version](http://github.com/wilmoore/nodejs-version) for that)
+-   Scan the NodeJS download page for a new release.
+-   Locate the correct platform (Mac/Linux, x64/x86).
+-   Download and extract.
+-   Update `$PATH` and `$MANPATH` accordingly (actually see [nodejs-version][nodejs-version] for that).
+
+`nodejs-latest -i` handles this for you.
+
 
 Usage Example
 ------------------------------
 
-Show latest NodeJS version available:
+What is the latest binary release?:
 
     % nodejs-latest
 
-Install latest NodeJS binary:
+Install the latest binary release:
 
     % nodejs-latest -i
 
-Install latest NodeJS binary (forcefully overwriting a previous installation):
+Install the latest binary relase (forcefully overwriting a previous installation):
 
-    % nodejs-latest -fi
+    % nodejs-latest -if
 
 Show program version:
 
@@ -47,27 +47,25 @@ Requirements
 *   [required] Linux or Mac OS X, awk, curl, uname
 
 
-Installing
+Install/Upgrade
 ------------------------------
 
-**Download**
-
-    % mkdir -p $HOME/local/nodejs-latest
+    % rm -rdif $HOME/local/nodejs-latest
+    % mkdir -p !$
     % cd !$
-    % curl -# -L https://github.com/wilmoore/nodejs-latest/tarball/master | tar -xz --strip 1
+    % curl -#L https://github.com/wilmoore/nodejs-latest/tarball/master | tar -xz --strip 1
     % chmod a+x bin/*
-    % export PATH=${HOME}/local/nodejs-latest/bin:${PATH}
+    % export PATH=$HOME/local/nodejs-latest/bin:$PATH
     % cd -
 
-**Path Setup**
-
-Best if used with [nodejs-version](http://github.com/wilmoore/nodejs-version); however, you may alternatively export the ${PATH} and ${MANPATH} environment variables manually.
+I like to use [nodejs-version][nodejs-version] to toggle between versions; however, you may alternatively export `$PATH` and `$MANPATH` manually if you do not wish to toggle between versions.
 
 
 Changelog
 ------------------------------
 
--   (0.0.3) 20120926: Renamed to `nodejs-latest`.
+-   (0.0.6) 20121008: Stable Report-only mode.
+-   (0.0.3) 20120926: Renamed to `nodejs-latest` from `node-latest`.
 -   (0.0.1) 20120923: Initial Usable Release.
 
 
@@ -96,3 +94,6 @@ LICENSE
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
     THE SOFTWARE.
 
+
+
+[nodejs-version]: http://github.com/wilmoore/nodejs-version
