@@ -28,6 +28,10 @@ Install the latest binary release:
 
     % nodejs-latest -i
 
+Install the latest binary release to an alternative prefix:
+
+    % PREFIX=/path/to/nodejs/versions nodejs-latest -i
+
 Install the latest binary relase (forcefully overwriting a previous installation):
 
     % nodejs-latest -if
