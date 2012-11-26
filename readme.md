@@ -30,7 +30,7 @@ Install the latest binary release:
 
 Install the latest binary release to an alternative prefix:
 
-    % PREFIX=/path/to/nodejs/versions nodejs-latest -i
+    % PREFIX=$HOME/.nodes nodejs-latest -i
 
 Install the latest binary relase (forcefully overwriting a previous installation):
 
@@ -68,6 +68,7 @@ I like to use [nodejs-version][nodejs-version] to toggle between versions; howev
 Changelog
 ------------------------------
 
+-   (0.0.7) 20121126: Corrected Report-only mode with PREFIX override.
 -   (0.0.6) 20121008: Stable Report-only mode.
 -   (0.0.3) 20120926: Renamed to `nodejs-latest` from `node-latest`.
 -   (0.0.1) 20120923: Initial Usable Release.

@@ -20,7 +20,7 @@ set -o nounset
 ################################################################################
 
 # current version
-declare _VERSION=0.0.6
+declare _VERSION=0.0.7
 
 # program name
 declare PROGNAME=nodejs-latest
@@ -118,7 +118,7 @@ fi
 
 # a bit of whitespace
 echo ""
-echo "Scanning for the latest NodeJS binary relase:"
+echo "Scanning for the latest NodeJS binary release:"
 echo ""
 
 # install if requested
@@ -128,13 +128,6 @@ if [[ ${INSTALL} -eq 1 ]]; then
   echo "creating directory: ${PREFIX}"
   echo ""
   mkdir -p ${PREFIX}
-fi
-
-# quit if $PREFIX directory doesn't exist
-if [[ ! -d ${PREFIX} ]]; then
-  echo "Sorry, the directory '${PREFIX}' does not exist and we were unable to create it." >&2
-  echo "We are done here."                                                                >&2
-  exit 1
 fi
 
 ################################################################################
@@ -203,6 +196,17 @@ echo "TARGET PATH: ${TARGET_PATH}"
 # by default, we report only
 if [[ ${INSTALL} -eq 0 ]]; then
   exit 0
+fi
+
+################################################################################
+# PREFIX CHECK
+################################################################################
+
+# quit if $PREFIX directory doesn't exist
+if [[ ! -d ${PREFIX} ]]; then
+  echo "Sorry, the directory '${PREFIX}' does not exist and we were unable to create it." >&2
+  echo "We are done here."                                                                >&2
+  exit 1
 fi
 
 ################################################################################
