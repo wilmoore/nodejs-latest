@@ -65,6 +65,12 @@ Install/Upgrade
 I like to use [nodejs-version][nodejs-version] to toggle between versions; however, you may alternatively export `$PATH` and `$MANPATH` manually if you do not wish to toggle between versions.
 
 
+Direct Invoke (no install)
+------------------------------
+
+    % curl -fsSkL 'https://raw.github.com/wilmoore/nodejs-latest/master/bin/nodejs-latest' | bash
+
+
 Changelog
 ------------------------------
 
