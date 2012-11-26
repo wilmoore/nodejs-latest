@@ -68,6 +68,8 @@ I like to use [nodejs-version][nodejs-version] to toggle between versions; howev
 Direct Invoke (no install)
 ------------------------------
 
+Obviously I do not recommend this; however, some will want to invoke this script without actually installing it. For the two of you brave souls, here you go.
+
     % curl -fsSkL 'https://raw.github.com/wilmoore/nodejs-latest/master/bin/nodejs-latest' | bash
 
 
